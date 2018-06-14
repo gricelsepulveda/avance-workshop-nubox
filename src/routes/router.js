@@ -3,6 +3,7 @@ import { Route, Link, Switch } from 'react-router-dom'
 import Login from '@containers/login.cont'
 import Pagos from '@containers/pagos.cont'
 import Success from '@containers/success.cont' 
+import Espera from '@containers/espera.cont' 
 
 class App extends Component {
 
@@ -14,6 +15,7 @@ class App extends Component {
       { 'Login': Login },
       {  'Pagos': Pagos },
       { 'Success': Success },
+      { 'Espera': Espera },
     ],
     switch: [],
     listMenu: [],

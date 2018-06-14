@@ -63,3 +63,34 @@
     margin-right: 10px;
   }
 }
+
+.nbx-wait {
+  box-sizing: border-box;
+  position: relative;
+  top: 120px;
+  left: 24px;
+  position: absolute;
+  width: calc(100vw - 48px);
+  height: calc(100vh - 48px - 96px);
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  border: 1px solid $gray-2;
+  .nbx-wrapper-wait {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    h1 {
+      color: $color-3;
+    }
+    img {
+      margin-top: 20px;
+      width: 150px;
+    }
+  }
+}
