@@ -30,11 +30,11 @@ class Login extends React.Component {
           <Avatar size="md" color="color-5"/>
           <p className="nbx-p">Ingresa tus datos para pagar</p>
           <form type="post" action="/Login/Login" className="nbx-form-login">
-            <Input required={true} placeholder="Rut emisor" name="rut_emisor" id="rut_emisor"/>
-            <Input required={true} placeholder="Rut receptor" name="rut_receptor" id="rut_receptor"/>
-            <Input required={true} placeholder="Número de factura" name="n_actura" id="n_factura"/>
+            <Input navegable autoFocus required={true} placeholder="Rut emisor" name="rut_emisor" id="rut_emisor"/>
+            <Input navegable required={true} placeholder="Rut receptor" name="rut_receptor" id="rut_receptor"/>
+            <Input navegable required={true} placeholder="Número de factura" name="n_actura" id="n_factura"/>
             <div className="nbx-captcha-container"></div>
-            <Button nbx-alternative type="submit">Ingresar</Button>
+            <Button navegable nbx-alternative type="submit">Ingresar</Button>
           </form>
         </Panel>
       </div>
