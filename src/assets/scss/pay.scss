@@ -33,3 +33,64 @@
 .nbx-grid-actionbar-bottom {
   justify-content: flex-end;
 }
+
+.nbx-pdf-space {
+  //background: $gray-2;
+  width: 100%;
+  height: calc(100vh - 238px);
+  border: 1px solid $gray-2;
+  overflow: hidden;
+}
+
+.nbx-title {
+  span {
+    color: $color-8;
+  }
+}
+
+.nbx-buttons-pdf {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-content: center;
+  align-items: center;
+  height: 28px;
+  margin-top: 24px;
+  button {
+    margin-right: 10px;
+  }
+  input {
+    margin-right: 10px;
+  }
+}
+
+.nbx-wait {
+  box-sizing: border-box;
+  position: relative;
+  top: 24px;
+  left: 24px;
+  position: absolute;
+  width: calc(100vw - 48px);
+  height: calc(100vh - 48px);
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  border: 1px solid $gray-2;
+  .nbx-wrapper-wait {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    h1 {
+      color: $color-3;
+    }
+    img {
+      margin-top: 20px;
+      width: 150px;
+    }
+  }
+}
