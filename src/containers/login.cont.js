@@ -42,6 +42,25 @@ class Login extends React.Component {
     }
   }
 
+  componentDidMount() {
+
+    let getParameterByName = (name, url) => {
+      if (!url) url = window.location.href
+      name = name.replace(/[\[\]]/g, '\\$&')
+      var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url)
+      if (!results) return null
+      if (!results[2]) return ''
+      return decodeURIComponent(results[2].replace(/\+/g, ' '))
+    }
+
+    let validationMessage = () => {
+      Alert.show(
+        <Alert.Create danger timeout={3000}>{getParameterByName('mensaje')}</Alert.Create>
+      )
+    }
+  }
+
   render(){
 
     return (
