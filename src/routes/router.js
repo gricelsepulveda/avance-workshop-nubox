@@ -1,7 +1,5 @@
 import React, { Component, Fragment } from 'react'
 import { Route, Link, Switch } from 'react-router-dom'
-import Empleados from '@containers/empleados.cont'
-import Empresas from '@containers/empresas.cont'
 import Login from '@containers/login.cont'
 
 class App extends Component {
@@ -11,8 +9,6 @@ class App extends Component {
    */
   state = {
     modules: [
-      { 'Empleados': Empleados },
-      { 'Empresas': Empresas },
       { 'Login': Login },
     ],
     switch: [],

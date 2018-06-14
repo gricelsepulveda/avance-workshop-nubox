@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import store from './store/store'
 import App from './routes/router'
-import { getJsonDataConfig, baseParameters } from './actions/base/config.act'
+import { getJsonDataConfig } from './actions/base/config.act'
 import { Loader } from 'react-nubox'
 
 /**
@@ -34,12 +34,7 @@ var _baseParameters = true //Variable para ejecutar sólo una vez baseParameters
 const unsubscribe = store.subscribe(() => {  
   //Valida que se cargue el archivo de configuración
   const FILE_CONFIG = store.getState().config.fileConfig ? store.getState().config.fileConfig : null
-  //Carga parámetros que se necesiten (desde api, como listas o data inicial)
-  FILE_CONFIG && _baseParameters ? (baseParameters(FILE_CONFIG.url), _baseParameters= false ) :  null
-  //Lee si ya se cargaron datos iniciales
-  const BASE_PARAM = store.getState().config.baseParameters ? true : false
-  
-  BASE_PARAM ? (renderContainer(), unsubscribe()) : renderLoader()
+  FILE_CONFIG ? (renderContainer(), unsubscribe()) : renderLoader()
 })
 
 /**
