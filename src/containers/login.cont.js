@@ -26,6 +26,10 @@ class Login extends React.Component {
   //let onChange 
 
   render(){
+    /*let value
+    let onChange = () => {
+      console.log('Captcha value:', value)
+    }*/
     return (
       <div className="nbx-login-bg">
         <Panel>
@@ -36,9 +40,9 @@ class Login extends React.Component {
           <form method="post" action="/Login/Login" className="nbx-form-login">
             <Input navegable autoFocus required={true} placeholder="Rut emisor" name="rut_emisor" id="rut_emisor"/>
             <Input navegable required={true} placeholder="Rut receptor" name="rut_receptor" id="rut_receptor"/>
-            <Input navegable required={true} placeholder="Número de factura" name="n_actura" id="n_factura"/>
+            <Input navegable required={true} placeholder="Número de factura" name="n_factura" id="n_factura"/>
             <div className="nbx-captcha-container">
-              {/*<ReCAPTCHA ref="recaptcha" sitekey="Your client site key" onChange={onChange}/> */}
+              {/*<ReCAPTCHA ref="recaptcha" sitekey="Your client site key" onChange={onChange}/>*/}
             </div>
             <button tabIndex="0" className="nbx-button normal alternative" type="submit">Ingresar</button>
           </form>
