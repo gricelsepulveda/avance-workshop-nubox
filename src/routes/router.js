@@ -33,11 +33,13 @@ class App extends Component {
    * Crea Menú y Switch para react-router
   */
   routerList = () => {
+    let url = window.location;
+    let splt = url.pathname.split('/');
     let _list = [], _switch = []
     this.state.modules.forEach((element, index) => {
       Object.entries(element).forEach(([key, value]) => {
         _list.push(<li key={index}><Link to={`/${key}`}>{key}</Link></li>)
-        _switch.push(<Route key={index} path={'/' + key} exact component={value} />)
+        _switch.push(<Route key={index} path={splt ? splt.length > 2 ? '/'+splt[1] +'/'+key: '/'+key: '/' +key} exact component={value} />)
       })
     })
     return { list: _list, switch: _switch }
