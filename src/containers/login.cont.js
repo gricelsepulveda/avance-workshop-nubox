@@ -25,7 +25,12 @@ class Login extends React.Component {
     if (this.state.isVerified) {
       document.getElementsByTagName('form')[0].submit()
     } else {
-      alert('Please verify you are human')
+      let errorMessage = () => {
+        Alert.show(
+          <Alert.Create danger  timeout={3000}>¡Comprueba que eres una persona!</Alert.Create>
+        )
+      }
+      errorMessage()
     }
   }
 
@@ -50,9 +55,7 @@ class Login extends React.Component {
             <Input sm navegable autoFocus required={true} placeholder="Rut emisor" name="rut_emisor" id="rut_emisor"/>
             <Input sm navegable required={true} placeholder="Rut receptor" name="rut_receptor" id="rut_receptor"/>
             <Input sm navegable required={true} placeholder="Número de factura" name="n_factura" id="n_factura"/>
-            <div className="nbx-captcha-container">
-              <Recaptcha sitekey="6LcnC18UAAAAAE1cEYcLSiOn_olMGs66o8gP77P1" render="explicit" onloadCallback={this.recaptchaLoaded} verifyCallback={this.verifyCallback}/>
-            </div>
+            <Recaptcha sitekey="6LcnC18UAAAAAE1cEYcLSiOn_olMGs66o8gP77P1" render="explicit" onloadCallback={this.recaptchaLoaded} verifyCallback={this.verifyCallback}/>
             <button tabIndex="0" className="nbx-button normal alternative" type="button" onClick={this.handleSuscribe}>Ingresar</button>
           </form>
         </Panel>
