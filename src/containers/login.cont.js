@@ -27,7 +27,7 @@ class Login extends React.Component {
         <Panel>
           <img className="nbx-logo-nubox" src="../../../assets/images/logo-nubox.svg" alt="logo-nubox"/>
           <h1 className="nbx-h1">Portal de pagos<br/>¡Bienvenido!</h1>
-          <Avatar size="md" color="color-5" firstname="gricel" lastname="sepulveda"/>
+          <Avatar size="md" color="color-5"/>
           <p className="nbx-p">Ingresa tus datos para pagar</p>
           <form type="post" action="/Login/Login" className="nbx-form-login">
             <Input placeholder="Rut emisor" name="rut-emisor" id="rut-emisor"/>
