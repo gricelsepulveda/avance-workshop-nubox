@@ -30,9 +30,9 @@ class Login extends React.Component {
           <Avatar size="md" color="color-5"/>
           <p className="nbx-p">Ingresa tus datos para pagar</p>
           <form type="post" action="/Login/Login" className="nbx-form-login">
-            <Input placeholder="Rut emisor" name="rut-emisor" id="rut-emisor"/>
-            <Input placeholder="Rut receptor" name="rut-receptor" id="rut-receptor"/>
-            <Input placeholder="Número de factura" name="n-factura" id="n-factura"/>
+            <Input required={true} placeholder="Rut emisor" name="rut-emisor" id="rut-emisor"/>
+            <Input required={true} placeholder="Rut receptor" name="rut-receptor" id="rut-receptor"/>
+            <Input required={true} placeholder="Número de factura" name="n-factura" id="n-factura"/>
             <div className="nbx-captcha-container"></div>
             <Button nbx-alternative type="submit">Ingresar</Button>
           </form>
