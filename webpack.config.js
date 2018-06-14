@@ -8,7 +8,7 @@ require("babel-polyfill");
 
 
 //Ruta en donde está Json de configuración
-const baseUrl = { url: 'http://localhost:8095/config_react/config.json' }
+const baseUrl = { url: '' }
 
 module.exports = {
   entry:

@@ -9,7 +9,7 @@ export const getJsonDataConfig = async (baseUrl) => {
   try {
     //Obtiene ruta desde la raiz del proyecto (localhost/proyecto/config_react/config.json)
     let pathname = window.location.pathname.split('/')
-    let ruta = pathname[1] ? `${window.location.origin}/${pathname[1]}` : `${window.location.origin}`
+    let ruta = pathname[1] ? `${window.location.origin}` : `${window.location.origin}`
     let defaultUrlBase = `${ruta}/${CONFIG.URL_LOCAL}`
 
     let response = null
