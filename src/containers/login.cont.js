@@ -15,14 +15,18 @@ class Login extends React.Component {
     this.verifyCallback = this.verifyCallback.bind(this)
     this.state = {
       isVerified: false,
+      rutEmisor: '',
+      rutReceptor: '',
+      nFactura: ''
     }
+    this.formLogin = React.createRef()
   }
   recaptchaLoaded() {
     console.log('captcha successful')
   }
-
   handleSuscribe() {
     if (this.state.isVerified) {
+      console.log(this.formLogin)
       document.getElementsByTagName('form')[0].submit()
     } else {
       let errorMessage = () => {
@@ -35,9 +39,13 @@ class Login extends React.Component {
   }
 
   verifyCallback(response) {
+
+
+
     if (response) {
+
       this.setState({
-        isVerified: true, 
+        isVerified: true,
       })
     }
   }
@@ -51,10 +59,10 @@ class Login extends React.Component {
           <h1 className="nbx-h1">Portal de pagos<br/>¡Bienvenido!</h1>
           <Avatar size="md" color="color-5"/>
           <p className="nbx-p">Ingresa tus datos para pagar</p>
-          <form method="post" action="Login/Login" className="nbx-form-login">
-            <Input sm navegable autoFocus required={true} placeholder="Rut emisor" name="rut_emisor" id="rut_emisor"/>
-            <Input sm navegable required={true} placeholder="Rut receptor" name="rut_receptor" id="rut_receptor"/>
-            <Input sm navegable required={true} placeholder="Número de factura" name="n_factura" id="n_factura"/>
+          <form method="post" action="Login/Login" className="nbx-form-login" ref={this.formLogin} >
+            <Input sm navegable autoFocus required={true} placeholder="Rut emisor" name="rut_emisor" id="rut_emisor" value={this.state.rutEmisor} />
+            <Input sm navegable required={true} placeholder="Rut receptor" name="rut_receptor" id="rut_receptor" value={this.state.rutReceptor}/>
+            <Input sm navegable required={true} placeholder="Número de factura" name="n_factura" id="n_factura" value={this.state.nFactura}/>
             <Recaptcha sitekey="6LcnC18UAAAAAE1cEYcLSiOn_olMGs66o8gP77P1" render="explicit" onloadCallback={this.recaptchaLoaded} verifyCallback={this.verifyCallback}/>
             <button tabIndex="0" className="nbx-button normal alternative" type="button" onClick={this.handleSuscribe}>Ingresar</button>
           </form>
