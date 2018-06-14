@@ -31,7 +31,7 @@ class App extends Component {
     this.state.modules.forEach((element, index) => {
       Object.entries(element).forEach(([key, value]) => {
         _list.push(<li key={index}><Link to={`/${key}`}>{key}</Link></li>)
-        _switch.push(<Route key={index} path={'/' + key} exact component={value} />)
+        _switch.push(<Route key={index} path={'/WebApi/' + key} exact component={value} />)
       })
     })
     return { list: _list, switch: _switch }
