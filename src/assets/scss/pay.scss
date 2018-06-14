@@ -33,3 +33,33 @@
 .nbx-grid-actionbar-bottom {
   justify-content: flex-end;
 }
+
+.nbx-pdf-space {
+  //background: $gray-2;
+  width: 100%;
+  height: calc(100vh - 238px);
+  border: 1px solid $gray-2;
+  overflow: hidden;
+}
+
+.nbx-title {
+  span {
+    color: $color-8;
+  }
+}
+
+.nbx-buttons-pdf {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-content: center;
+  align-items: center;
+  height: 28px;
+  margin-top: 24px;
+  button {
+    margin-right: 10px;
+  }
+  input {
+    margin-right: 10px;
+  }
+}

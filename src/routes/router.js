@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import { Route, Link, Switch } from 'react-router-dom'
 import Login from '@containers/login.cont'
-import Pagos from '@containers/pagos.cont' 
+import Pagos from '@containers/pagos.cont'
+import Success from '@containers/success.cont' 
 
 class App extends Component {
 
@@ -12,6 +13,7 @@ class App extends Component {
     modules: [
       { 'Login': Login },
       {  'Pagos': Pagos },
+      { 'Success': Success },
     ],
     switch: [],
     listMenu: [],
