@@ -4,24 +4,6 @@ import { Avatar } from 'react-nubox'
 import { Input } from 'react-nubox'
 import { Recaptcha } from 'react-recaptcha'
 
-
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-//import GridEmpresas from '@components/empresas/gridEmpresas.cmp'
-//import * as empresasActions from '@actions/empresas.act'
-
-/*let mapStateToProps = (state) => {
-  return {
-    baseParameters: state.config.baseParameters,
-    empresas: state.empresas,
-  }
-}
-
-let mapDispatchToProps = (dispatch) => {
-  return bindActionCreators(empresasActions, dispatch)
-}
-*/
-
 class Login extends React.Component {
 
   render(){
@@ -49,5 +31,3 @@ class Login extends React.Component {
 }
 
 export default Login
-
-//export default connect(mapStateToProps, mapDispatchToProps)(GridEmpresas)
