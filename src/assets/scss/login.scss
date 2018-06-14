@@ -1,0 +1,71 @@
+.nbx-login-bg {
+  background: {
+    image: url('./assets/images/nbx-pattern_login.png');
+    size: auto;
+    repeat: repeat;
+    color: $color-2;
+    blend-mode: multiply;
+  }
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  @include nbx-flex-common;
+}
+
+img.nbx-logo-nubox {
+  width: 230px;
+  height: auto;
+  padding-bottom: 24px;
+  border-bottom: 1px solid $color-7;
+}
+
+h1.nbx-h1 {
+  color: $color-3;
+  font: {
+    family: 'Roboto', sans-serif;
+    size: 18px;
+    weight: 600;
+  }
+  text-align: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+p.nbx-p {
+  color: $black;
+  font: {
+    family: 'Roboto', sans-serif;
+    size: 16px;
+    weight: 400;
+  }
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.nbx-button.alternative {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.nbx-input {
+  margin-bottom: 5px;
+  &:last-of-type {
+    margin-bottom: 0px;
+  }
+}
+
+.nbx-captcha-container {
+  background-color: lighten($gray-2, 10%);
+  border: 1px solid $gray-2;
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-bottom: 20px; 
+}
+.nbx-form-login {
+  width: 100%;
+}

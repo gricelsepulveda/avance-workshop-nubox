@@ -1,0 +1,113 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "globals": {
+    "document": true,
+    "module": true,
+    "window": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    }
+  },
+  "rules": {
+    "no-unused-vars": "warn",
+    "arrow-parens": "off",
+    "camelcase": "error",
+    "strict": 0,
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "never",
+        "exports": "never",
+        "functions": "ignore"
+      }
+    ],
+    "default-case": "warn",
+    "eol-last": "error",
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "import/no-extraneous-dependencies": "off",
+    "jsx-quotes": "off",
+    "keyword-spacing": "error",
+    "no-console": "off",
+    "no-case-declarations": "off",
+    "no-use-before-define": "off",
+    "no-multi-assign": 2,
+    "object-curly-spacing": [
+      2,
+      "always"
+    ],
+    "promise/param-names": "error",
+    "promise/always-return": "error",
+    "promise/catch-or-return": "error",
+    "react/jsx-no-bind": "off",
+    "react/jsx-uses-vars": [
+      2
+    ],
+    "react/jsx-indent-props": [
+      2,
+      2
+    ],
+    "react/prop-types": "off",
+    "react/forbid-prop-types": "off",
+    "react/jsx-sort-prop-types": "off",
+    "react/no-multi-comp": "off",
+    "react/require-extension": "off",
+    "react/wrap-multilines": {
+      "assignment": "parens"
+    },
+    "react/jsx-curly-bracing": "never",
+    "react/no-find-dom-node": "off",
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "no-else-return": [
+      "error",
+      {
+        "allowElseIf": true
+      }
+    ],
+    "react/prefer-stateless-function": "off",
+    "semi": [
+      "error",
+      "never"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "no-useless-escape": "off"
+  },
+  "plugins": [
+    "react",
+    "compat",
+    "import",
+    "promise"
+  ]
+}

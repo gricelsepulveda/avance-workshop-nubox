@@ -1,0 +1,26 @@
+/* Proxima Soft Regular */
+@font-face {
+  font-family: 'Proxima Soft';
+  font-style: normal;
+  font-weight: 400;
+  src: url(Proxima-Soft-Regular.woff2) format('woff2'),
+	   url(Proxima-Soft-Regular.woff) format('woff');
+}
+
+/* Proxima Soft Medium */
+@font-face {
+  font-family: 'Proxima Soft';
+  font-style: normal;
+  font-weight: 500;
+  src: url(Proxima-Soft-Medium.woff2) format('woff2'),
+	   url(Proxima-Soft-Medium.woff) format('woff');
+}
+
+/* Proxima Soft Bold */
+@font-face {
+  font-family: 'Proxima Soft';
+  font-style: normal;
+  font-weight: 600;
+  src: url(Proxima-Soft-Bold.woff2) format('woff2'),
+	   url(Proxima-Soft-Bold.woff) format('woff');
+}
