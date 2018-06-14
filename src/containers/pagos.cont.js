@@ -5,12 +5,13 @@
 // import * as empleadosActions from '@actions/empleados.act'
 
  let mapStateToProps = (state) => {
+     console.log(state)
    return {
     //  config: state.config,
     //  fileConfig: state.config.fileConfig,
     //  empleados: state.empleados,
     //  persons: state.empleados.persons,
-     dataDte: state.dataDte,
+     dataDte: state.pagos.dtes,
    }
  }
 

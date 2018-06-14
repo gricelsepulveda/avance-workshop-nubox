@@ -4,8 +4,11 @@ import GridPagos  from './gridPagos.cmp'
 
 let arrayRoute = ['Inicio', 'Pago', 'Facturas a pagar']
 class Pagos  extends Component {
-  
+  componentDidMount() {
+    this.props.getListDte ()
+  }
   render() {
+    console.log(this)
     return (
       <Fragment>
         
@@ -18,7 +21,9 @@ class Pagos  extends Component {
 
           <Layout.Box>       
 
-            <GridPagos/>
+            <GridPagos dataGrid= {this.props.dataDte}
+            getDataDTE ={this.props.getListDte}
+            />
             
           </Layout.Box>
 

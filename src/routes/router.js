@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { Route, Link, Switch } from 'react-router-dom'
 import Login from '@containers/login.cont'
-import Pagos from '@containers/pagos.cont.js' 
+import Pagos from '@containers/pagos.cont' 
 
 class App extends Component {
 

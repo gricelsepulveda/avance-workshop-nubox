@@ -37,15 +37,19 @@ class GridPago extends React.PureComponent {
       console.log(this.state.totalCount)
 
     }
+
+    componentDidMount() {
+      this.props.getDataDTE()
+    }
   
   
     render() {
-  
+  console.log(this)
       return (
         <Fragment >
           <Grid.Container
             structure={this.state.header}
-            data={this.state.data}
+            data={this.props.dataGrid}
             checks
             sort
             onChange={(data) => { this.changeSelected(data) }}

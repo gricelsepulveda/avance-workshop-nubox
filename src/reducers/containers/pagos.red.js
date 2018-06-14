@@ -4,15 +4,15 @@ const initState = {
   dtes : [],
 }
 
-const EMPLEADOS = (state = initState , action ) => {
+const PAGOS = (state = initState , action ) => {
+  
   switch (action.type){
-    case EMPLEADOS_CONST.ACTIONS.SET_DATA_GRID:
-      return Object.assign({}, state, { grid: action.grid } )
-    case EMPLEADOS_CONST.ACTIONS.SET_DATA_PERSONS:
-      return Object.assign({}, state, { persons: action.persons })
+    case PAGOS_CONST.ACTIONS.SET_DATA_DTE:
+    console.log(action)
+      return Object.assign({}, state, { dtes: action.dtes } )
     default:
       return state
   }
 }
 
-export default EMPLEADOS
+export default PAGOS
