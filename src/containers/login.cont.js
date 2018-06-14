@@ -24,8 +24,8 @@ let mapDispatchToProps = (dispatch) => {
 
 class Login extends React.Component {
 
-
   render(){
+    let callback 
     return (
       <div className="nbx-login-bg">
         <Panel>
@@ -38,7 +38,7 @@ class Login extends React.Component {
             <Input sm navegable required={true} placeholder="Rut receptor" name="rut_receptor" id="rut_receptor"/>
             <Input sm navegable required={true} placeholder="Número de factura" name="n_factura" id="n_factura"/>
             <div className="nbx-captcha-container">
-              <Recaptcha sitekey="Your client site key" render="explicit" onloadCallback={callback}/>
+              <Recaptcha sitekey="6LcnC18UAAAAAE1cEYcLSiOn_olMGs66o8gP77P1" render="explicit" onloadCallback={callback}/>
             </div>
             <button tabIndex="0" className="nbx-button normal alternative" type="submit">Ingresar</button>
           </form>
