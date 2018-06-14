@@ -1,0 +1,35 @@
+.nbx-grid-space {
+  .cnt-nbx-grid {
+    .body-nbx-grid {
+      .cnt-body-nbx-grid {
+        .register {
+          &:last-of-type {
+            border-bottom: 1px solid $gray-2!important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.nbx-radio-image {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin-right: 20px;
+  img {
+    margin-left: 10px;
+    border: 1px solid $gray-2;
+    background-color: $white;
+    width: 80px;
+    height: auto;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+}
+
+.nbx-grid-actionbar-bottom {
+  justify-content: flex-end;
+}

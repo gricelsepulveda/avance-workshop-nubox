@@ -19,6 +19,7 @@ import 'react-nubox/dist/react-nubox.css'
 import './assets/scss/workshop-style.scss'
 
 
+
 /**
  * Función para cargar en redux el objeto JSON de configuración.
  * @param BASE_URL.url se carga al compilar por webpack.

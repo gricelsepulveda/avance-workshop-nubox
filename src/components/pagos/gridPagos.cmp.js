@@ -1,5 +1,6 @@
 import React,{ Fragment } from 'react'
 import { Grid, Button } from 'react-nubox'
+import { Modal } from 'react-nubox'
 
 
 class GridPago extends React.PureComponent {
@@ -20,9 +21,22 @@ class GridPago extends React.PureComponent {
       header: header,
       totalCount : 0,
       errorCount:false,
+      showModal: false,
+      contentModal : <div></div>,
     }
+
+    this.modalIframe = React.createRef()
   
   }
+
+    showModalIframe = (show) =>{
+      this.modalIframe.current.show(show)
+    }
+
+  /**
+   * Show/Hide Modal
+   * @param {bool} show
+  */
 
 
     changeSelected = (data) => {
@@ -44,7 +58,15 @@ class GridPago extends React.PureComponent {
   
   
     render() {
-  console.log(this)
+      console.log(this)
+
+      let pdfView = {
+        src: this.props.urlPago, 
+      }
+
+      this.props.urlPago 
+
+      
       return (
         <Fragment >
           <Grid.Container
@@ -54,17 +76,30 @@ class GridPago extends React.PureComponent {
             sort
             onChange={(data) => { this.changeSelected(data) }}
           >
-
-
             <Grid.ActionBar bottom>
-              <input type="radio" checked="checked"/>
-              <Button nbx-normal nbx-sm onClick={this.pagarDocumentos}> Pagar</Button>
+              <div className="nbx-radio-image">
+                <input type="radio" checked="checked"/>
+                <img src="./assets/images/khipu-logo.png" alt="khipu"/>
+              </div>
+              <Button nbx-normal sm onClick={this.pagarDocumentos}> Pagar</Button>
+              <Button nbx-normal sm onClick={()=>{this.showModalIframe(true)}}>Levantar Modal Iframe</Button>
             </Grid.ActionBar> 
   
             <Grid.Total width={20} price={this.state.totalCount} error={this.state.errorCount} />
             
           </Grid.Container>
-        
+
+          <Modal.Create title='Pagar Factura' nbx-width-md nbx-height-md ref={this.modalIframe} >
+            <Modal.Body>
+              <div className="nbx-iframe-modal">
+                <iframe id="pdfViewerDesprendible" src={ `data:application/pdf;base64,${pdfView.src}`} height="380px" width="100%" />
+              </div>   
+            </Modal.Body>   
+            <Modal.ActionBar>
+              <Button nbx-normal nbx-sm navegable onClick={() => { this.showModalIframe(false) } }>aceptar</Button>
+            </Modal.ActionBar>
+          </Modal.Create>
+
         </Fragment>
       )
     }

@@ -21,9 +21,7 @@ class Pagos  extends Component {
 
           <Layout.Box>       
 
-            <GridPagos dataGrid= {this.props.dataDte}
-            getDataDTE ={this.props.getListDte}
-            />
+            <GridPagos dataGrid= {this.props.dataDte} getDataDTE ={this.props.getListDte} />
             
           </Layout.Box>
 
