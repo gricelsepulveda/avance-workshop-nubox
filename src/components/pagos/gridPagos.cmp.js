@@ -9,11 +9,11 @@ class GridPago extends React.PureComponent {
     super(props)    
       
     const header = new Grid.Header()
-    header.addHeader({ text: 'Fecha', propertyName: 'Fecha', width: 10, align:'left' })
-    header.addHeader({ text: '#Factura', propertyName: 'Factura', width: 10, align: 'left' })
-    header.addHeader({ text: 'Cliente', propertyName: 'Cliente', width: 30, align: 'left' })
+    header.addHeader({ text: 'Fecha', propertyName: 'FechaEmision', width: 10, align:'left' })
+    header.addHeader({ text: '#Factura', propertyName: 'FolioDocumento', width: 10, align: 'left' })
+    header.addHeader({ text: 'Cliente', propertyName: 'RutEmisor', width: 30, align: 'left' })
     header.addHeader({ text: 'Fecha Vencimiento', propertyName: 'FechaVencimiento', width: 20, align: 'left' })
-    header.addHeader({ text: '$Total', propertyName: 'Total', width: 20, align: 'right' })
+    header.addHeader({ text: '$Total', propertyName: 'MontoTotal', width: 20, align: 'right' })
   
     this.state = {
       data: this.props.dataExample,
@@ -47,9 +47,9 @@ class GridPago extends React.PureComponent {
     }
 
     pagarDocumentos = () => {
-      console.log(this.state.select)
-      console.log(this.state.totalCount)
 
+      this.props.pagar(this.state.select)
+    
     }
 
     componentDidMount() {

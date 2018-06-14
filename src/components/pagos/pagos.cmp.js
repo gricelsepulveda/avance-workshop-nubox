@@ -8,7 +8,6 @@ class Pagos  extends Component {
     this.props.getListDte ()
   }
   render() {
-    console.log(this)
     return (
       <Fragment>
         
@@ -21,7 +20,9 @@ class Pagos  extends Component {
 
           <Layout.Box>       
 
-            <GridPagos dataGrid= {this.props.dataDte} getDataDTE ={this.props.getListDte} />
+            <GridPagos dataGrid= {this.props.dataDte}
+              getDataDTE ={this.props.getListDte}
+            />
             
           </Layout.Box>
 

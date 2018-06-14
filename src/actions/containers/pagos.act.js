@@ -5,16 +5,26 @@ export const getListDte = () => {
     try {
       //Obtiene todos los estados en redux
     //   const state = getState()
-    //   let response = await fetch(state.config.fileConfig.url + 'api/people/')      
-    //   let json = await response.json()
-      const dataExample = [
-        { id: 1, Fecha: '03 May 2017', Factura: '😀', Cliente: '11.111.111-1 Cliente Cliente', FechaVencimiento: '05 Jun 2017', Total: '100000'  },
-        { id: 2, Fecha: '03 May 2017', Factura: '🤗', Cliente: '11.111.111-1 Cliente Cliente', FechaVencimiento: '05 Jun 2017', Total: '200000', check: true },
-        { id: 3, Fecha: '03 May 2017', Factura: '💩', Cliente: '11.111.111-1 Cliente Cliente', FechaVencimiento: '05 Jun 2017', Total: '300000' },
-        { id: 4, Fecha: '03 May 2017', Factura: '💩', Cliente: '11.111.111-1 Cliente Cliente', FechaVencimiento: '05 Jun 2017', Total: '400000' },
-        { id: 5, Fecha: '03 May 2017', Factura: '💩', Cliente: '11.111.111-1 Cliente Cliente', FechaVencimiento: '05 Jun 2017', Total: '500000',check: true },
-      ]
-      dispatch({ type: PAGOS.ACTIONS.SET_DATA_DTE, dtes: dataExample })
+      let response = await fetch('http://anemoi/WebApi/DocumentosElectronicos/ObtenerPorEmisorReceptorDocumento',{ method : 'post' })      
+      let json = await response.json()
+      console.log(json.documentosElectronicos)
+      dispatch({ type: PAGOS.ACTIONS.SET_DATA_DTE, dtes: json.documentosElectronicos })
+      return    
+    } catch (error) {
+      console.error(error)
+      return
+    }
+  }
+}
+
+export const pagar = (documentos) => {
+  return async (dispatch, getState) => {
+    try {
+      //Obtiene todos los estados en redux
+    //   const state = getState()
+      // let response = await fetch('http://anemoi/WebApi/DocumentosElectronicos/ObtenerPorEmisorReceptorDocumento',documentos,{ method : 'post' })      
+      // let json = await response.json()
+      dispatch({ type: PAGOS.ACTIONS.PAGANDO, urlPago: 'https://khipu.com/payment/info/qrsnqgwshnqx' })
       return    
     } catch (error) {
       console.error(error)
