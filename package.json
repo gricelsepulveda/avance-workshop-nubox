@@ -17,6 +17,7 @@
     "react-dom": "^16.3.2",
     "react-google-recaptcha": "^0.12.0",
     "react-nubox": "git+http://gitlab.nubox.com/ggiannecchinia/react-nubox.git",
+    "react-recaptcha": "^2.3.8",
     "react-redux": "^5.0.7",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",

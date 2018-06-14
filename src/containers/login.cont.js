@@ -2,34 +2,43 @@ import React from 'react'
 import { Panel } from 'react-nubox'
 import { Avatar } from 'react-nubox'
 import { Input } from 'react-nubox'
-import { Button } from 'react-nubox'
-//import { ReCAPTCHA } from 'react-google-recaptcha'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-//import GridEmpresas from '@components/empresas/gridEmpresas.cmp'
-//import * as empresasActions from '@actions/empresas.act'
-
-/*let mapStateToProps = (state) => {
-  return {
-    baseParameters: state.config.baseParameters,
-    empresas: state.empresas,
-  }
-}
-
-let mapDispatchToProps = (dispatch) => {
-  return bindActionCreators(empresasActions, dispatch)
-}
-*/
+import { Alert } from 'react-nubox'
+import Recaptcha from 'react-recaptcha'
 
 class Login extends React.Component {
 
-  //let onChange 
+  constructor(props) {
+    super(props)
+
+    this.handleSuscribe = this.handleSuscribe.bind(this)
+    this.recaptchaLoaded = this.recaptchaLoaded.bind(this)
+    this.verifyCallback = this.verifyCallback.bind(this)
+    this.state = {
+      isVerified: false,
+    }
+  }
+  recaptchaLoaded() {
+    console.log('captcha successful')
+  }
+
+  handleSuscribe() {
+    if (this.state.isVerified) {
+      document.getElementsByTagName('form')[0].submit()
+    } else {
+      alert('Please verify you are human')
+    }
+  }
+
+  verifyCallback(response) {
+    if (response) {
+      this.setState({
+        isVerified: true, 
+      })
+    }
+  }
 
   render(){
-    /*let value
-    let onChange = () => {
-      console.log('Captcha value:', value)
-    }*/
+
     return (
       <div className="nbx-login-bg">
         <Panel>
@@ -37,14 +46,14 @@ class Login extends React.Component {
           <h1 className="nbx-h1">Portal de pagos<br/>¡Bienvenido!</h1>
           <Avatar size="md" color="color-5"/>
           <p className="nbx-p">Ingresa tus datos para pagar</p>
-          <form method="post" action="/Login/Login" className="nbx-form-login">
-            <Input navegable autoFocus required={true} placeholder="Rut emisor" name="rut_emisor" id="rut_emisor"/>
-            <Input navegable required={true} placeholder="Rut receptor" name="rut_receptor" id="rut_receptor"/>
-            <Input navegable required={true} placeholder="Número de factura" name="n_factura" id="n_factura"/>
+          <form method="post" action="Login/Login" className="nbx-form-login">
+            <Input sm navegable autoFocus required={true} placeholder="Rut emisor" name="rut_emisor" id="rut_emisor"/>
+            <Input sm navegable required={true} placeholder="Rut receptor" name="rut_receptor" id="rut_receptor"/>
+            <Input sm navegable required={true} placeholder="Número de factura" name="n_factura" id="n_factura"/>
             <div className="nbx-captcha-container">
-              {/*<ReCAPTCHA ref="recaptcha" sitekey="Your client site key" onChange={onChange}/>*/}
+              <Recaptcha sitekey="6LcnC18UAAAAAE1cEYcLSiOn_olMGs66o8gP77P1" render="explicit" onloadCallback={this.recaptchaLoaded} verifyCallback={this.verifyCallback}/>
             </div>
-            <button tabIndex="0" className="nbx-button normal alternative" type="submit">Ingresar</button>
+            <button tabIndex="0" className="nbx-button normal alternative" type="button" onClick={this.handleSuscribe}>Ingresar</button>
           </form>
         </Panel>
       </div>
@@ -53,5 +62,3 @@ class Login extends React.Component {
 }
 
 export default Login
-
-//export default connect(mapStateToProps, mapDispatchToProps)(GridEmpresas)
