@@ -1,6 +1,4 @@
 import React,{ Fragment } from 'react'
-import { Navbar } from 'react-nubox'
-import { Breadcrumb } from 'react-nubox'
 
 
 class Espera extends React.Component {
@@ -11,9 +9,7 @@ class Espera extends React.Component {
 
     return (
       <Fragment>
-        
-        <Navbar system="Botón de Pago Nubox" type="alternative" />
-        <Breadcrumb route={arrayRoute} />
+      
 
         <div className="nbx-wait">
           <div className="nbx-wrapper-wait">

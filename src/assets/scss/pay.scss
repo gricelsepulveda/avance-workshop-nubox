@@ -67,11 +67,11 @@
 .nbx-wait {
   box-sizing: border-box;
   position: relative;
-  top: 120px;
+  top: 24px;
   left: 24px;
   position: absolute;
   width: calc(100vw - 48px);
-  height: calc(100vh - 48px - 96px);
+  height: calc(100vh - 48px);
   background-color: $white;
   display: flex;
   flex-direction: column;
