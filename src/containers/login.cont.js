@@ -29,7 +29,7 @@ class Login extends React.Component {
           <h1 className="nbx-h1">Portal de pagos<br/>¡Bienvenido!</h1>
           <Avatar size="md" color="color-5"/>
           <p className="nbx-p">Ingresa tus datos para pagar</p>
-          <form type="post" action="/Login/Login" className="nbx-form-login">
+          <form method="post" action="/Login/Login" className="nbx-form-login">
             <Input navegable autoFocus required={true} placeholder="Rut emisor" name="rut_emisor" id="rut_emisor"/>
             <Input navegable required={true} placeholder="Rut receptor" name="rut_receptor" id="rut_receptor"/>
             <Input navegable required={true} placeholder="Número de factura" name="n_actura" id="n_factura"/>
