@@ -3,6 +3,7 @@ import { Panel } from 'react-nubox'
 import { Avatar } from 'react-nubox'
 import { Input } from 'react-nubox'
 import { Button } from 'react-nubox'
+//import { ReCAPTCHA } from 'react-google-recaptcha'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 //import GridEmpresas from '@components/empresas/gridEmpresas.cmp'
@@ -21,6 +22,9 @@ let mapDispatchToProps = (dispatch) => {
 */
 
 class Login extends React.Component {
+
+  //let onChange 
+
   render(){
     return (
       <div className="nbx-login-bg">
@@ -33,8 +37,10 @@ class Login extends React.Component {
             <Input navegable autoFocus required={true} placeholder="Rut emisor" name="rut_emisor" id="rut_emisor"/>
             <Input navegable required={true} placeholder="Rut receptor" name="rut_receptor" id="rut_receptor"/>
             <Input navegable required={true} placeholder="Número de factura" name="n_actura" id="n_factura"/>
-            <div className="nbx-captcha-container"></div>
-            <Button navegable nbx-alternative type="submit">Ingresar</Button>
+            <div className="nbx-captcha-container">
+              {/*<ReCAPTCHA ref="recaptcha" sitekey="Your client site key" onChange={onChange}/> */}
+            </div>
+            <button tabIndex="0" className="nbx-button normal alternative" type="submit">Ingresar</button>
           </form>
         </Panel>
       </div>

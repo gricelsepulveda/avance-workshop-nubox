@@ -69,3 +69,228 @@ p.nbx-p {
 .nbx-form-login {
   width: 100%;
 }
+
+
+// PARTICULAR CLASSES
+.nbx-button {
+  color: $white;
+  box-sizing: border-box; 
+  cursor: pointer;
+  padding: 6px 10px;
+  line-height: 14px;
+  display: inline-block;
+  position: relative;
+  @include nbx-flex-common;
+  @include _animation;
+  @include nbx-roboto;
+  @include nbx-border-sm;
+  @include nbx-box-shadow;
+  font: {
+    size: 11px;
+    weight: 600;
+  }
+  text: {
+    align: center;
+    transform: uppercase;
+  }
+  /*> .nuboxFont.nubox-buscar {
+    padding-top: 2px;
+  }*/
+  &:focus, &:active {
+    outline: 0;
+  }
+  &.normal {
+    background: $color-3;
+    background-color: $color-3;
+    border: 1px solid $color-3;
+    &:hover {
+      background: lighten($color-3, 10%);
+      background-color: lighten($color-3, 10%);
+    }
+  }
+  &.alternative {
+    background: $color-3;
+    background-color: $color-3;
+    border: 1px solid $color-3;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 20px 0px 20px 0px;
+    font-size: 14px;
+    &.sm, &.md {
+      height: auto
+    }
+    &:hover {
+      background: lighten($color-3, 10%);
+      background-color: lighten($color-3, 10%);
+    }
+  }
+  &.highlight {
+    background: $color-2;
+    background-color: $color-2;
+    border: 1px solid $color-2;
+    &:hover {
+      background: lighten($color-2, 10%);
+      background-color: lighten($color-2, 10%);
+    }
+  }
+  &.disabled {
+    background: $gray-17;
+    background-color: $gray-17;
+    border: 1px solid $gray-16;
+    color: $gray-15;
+    box-shadow: none;
+    &:hover {
+      background: $btn-hover-gray;
+      background-color: $btn-hover-gray;
+      color: $gray-15;
+      cursor: initial;
+    }
+    > span {
+      color: $gray-15;
+    }
+  }
+  &.lg {
+    height: 32px;
+    &.focus {
+      box-shadow:0px 0px 0px 4px $gray-12, 0px 0px 0px 6px $color-5;
+    }
+  }
+  &.sm {
+    height: 28px;
+    &.focus, &.autofocus {
+      box-shadow:0px 0px 0px 4px $white, 0px 0px 0px 6px $color-5;
+    }
+  }
+  > span {
+    color: $white;
+    font-size: 11px;
+    margin-top: 1px;
+    margin-right: 6px;
+    margin-left: 0 !important;
+  }
+  &.label {
+    color: $white;
+    box-sizing: border-box; 
+    cursor: pointer;
+    padding: 0px 10px 0px 10px;
+    display: inline-block;
+    position: relative;
+    @include nbx-flex-common;
+    @include _animation;
+    @include nbx-roboto;
+    @include nbx-border-lg;
+    //@include nbx-box-shadow;
+    font: {
+      size: 11px;
+      weight: 500;
+    }
+    text: {
+      align: center;
+      transform: uppercase;
+    }
+    outline: none;
+    &:hover, &:active, &:focus {
+      outline: none;
+    }
+    &.color-1{ 
+      background: $color-1;
+      background-color: $color-1;
+      border: 1px solid $color-1;
+      &:hover {
+        background: lighten($color-1, 10%);
+        background-color: lighten($color-1, 10%);
+      }
+    }
+    &.color-2{ 
+      background: $color-2;
+      background-color: $color-2;
+      border: 1px solid $color-2;
+      &:hover {
+        background: lighten($color-2, 10%);
+        background-color: lighten($color-2, 10%);
+      }
+    }
+    &.color-3{ 
+      background: $color-3;
+      background-color: $color-3;
+      border: 1px solid $color-3;
+      &:hover {
+        background: lighten($color-3, 10%);
+        background-color: lighten($color-3, 10%);
+      }
+    }
+    &.color-4{ 
+      background: $color-4;
+      background-color: $color-4;
+      border: 1px solid $color-4;
+      &:hover {
+        background: lighten($color-4, 10%);
+        background-color: lighten($color-4, 10%);
+      }
+    }
+    &.color-5{ 
+      background: $color-5;
+      background-color: $color-5;
+      border: 1px solid $color-5;
+      &:hover {
+        background: lighten($color-5, 10%);
+        background-color: lighten($color-5, 10%);
+      }
+    }
+    &.color-6{ 
+      background: $color-8;
+      background-color: $color-8;
+      border: 1px solid $color-8;
+      &:hover {
+        background: lighten($color-8, 10%);
+        background-color: lighten($color-8, 10%);
+      }
+    }
+    &.color-7{ 
+      background: $color-9;
+      background-color: $color-9;
+      border: 1px solid $color-9;
+      &:hover {
+        background: lighten($color-9, 10%);
+        background-color: lighten($color-9, 10%);
+      }
+    }
+    &.color-8{ 
+      background: $color-10;
+      background-color: $color-10;
+      border: 1px solid $color-10;
+      &:hover {
+        background: lighten($color-10, 10%);
+        background-color: lighten($color-10, 10%);
+      }
+    }
+    &.disabled {
+      background: $gray-17;
+      background-color: $gray-17;
+      border: 1px solid $gray-16;
+      color: $gray-15;
+      /*&:hover {
+        background: darken($gray-15, 10%);
+        background-color: darken($gray-15, 10%);
+        color: $gray-17;
+      }*/
+      > span {
+        color: $gray-15;
+      }
+    }
+    &.lg {
+      height: 32px;
+    }
+    &.sm {
+      height: 28px;
+    }
+    > span {
+      color: $white;
+      font-size: 11px;
+      margin-right: 6px;
+
+    }
+  }
+}
