@@ -40,9 +40,16 @@ class GridPago extends React.PureComponent {
 
 
     changeSelected = (data) => {
-      console.log(data)
+      
+      let total = 0
+
+      data.forEach(element => {
+        total += element.MontoTotal
+      })
+
       this.setState({
         select: data,
+        totalCount : total,
       })
     }
 
