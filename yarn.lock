@@ -8473,7 +8473,7 @@ react-google-recaptcha@^0.12.0:
 
 "react-nubox@git+http://gitlab.nubox.com/ggiannecchinia/react-nubox.git":
   version "1.0.0"
-  resolved "git+http://gitlab.nubox.com/ggiannecchinia/react-nubox.git#6908033281609fdb97e9c898a02762dc1f336312"
+  resolved "git+http://gitlab.nubox.com/ggiannecchinia/react-nubox.git#2b4296e0bf794a62916fe543db95cd9768bc7f1c"
   dependencies:
     classnames "^2.2.5"
     react "16.3.2"

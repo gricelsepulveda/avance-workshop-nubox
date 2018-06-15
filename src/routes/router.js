@@ -1,7 +1,9 @@
 import React, { Component, Fragment } from 'react'
 import { Route, Link, Switch } from 'react-router-dom'
 import Login from '@containers/login.cont'
-import Pagos from '@containers/pagos.cont' 
+import Pagos from '@containers/pagos.cont'
+import Success from '@containers/success.cont' 
+import Espera from '@containers/espera.cont' 
 
 class App extends Component {
 
@@ -12,6 +14,8 @@ class App extends Component {
     modules: [
       { 'Login': Login },
       {  'Pagos': Pagos },
+      { 'Success': Success },
+      { 'Espera': Espera },
     ],
     switch: [],
     listMenu: [],
@@ -29,11 +33,13 @@ class App extends Component {
    * Crea Menú y Switch para react-router
   */
   routerList = () => {
+    let url = window.location;
+    let splt = url.pathname.split('/');
     let _list = [], _switch = []
     this.state.modules.forEach((element, index) => {
       Object.entries(element).forEach(([key, value]) => {
         _list.push(<li key={index}><Link to={`/${key}`}>{key}</Link></li>)
-        _switch.push(<Route key={index} path={'/' + key} exact component={value} />)
+        _switch.push(<Route key={index} path={splt ? splt.length > 2 ? '/'+splt[1] +'/'+key: '/'+key: '/' +key} exact component={value} />)
       })
     })
     return { list: _list, switch: _switch }

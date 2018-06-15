@@ -11,7 +11,7 @@ class Pagos  extends Component {
     return (
       <Fragment>
         
-        <Navbar system="Botón de Pago Nubox" user="Gricel Sepúlveda" type="alternative" />
+        <Navbar system="Botón de Pago Nubox" type="alternative" />
         <Breadcrumb route={arrayRoute} />
         
         <Layout.Container >
