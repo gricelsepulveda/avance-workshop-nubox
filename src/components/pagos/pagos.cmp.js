@@ -8,6 +8,7 @@ class Pagos  extends Component {
     this.props.getListDte ()
   }
   render() {
+   
     return (
       <Fragment>
         
@@ -16,7 +17,7 @@ class Pagos  extends Component {
         
         <Layout.Container >
 
-          <Layout.Title> Este es el título </Layout.Title>
+          <Layout.Title> Facturas a Pagar</Layout.Title>
 
           <Layout.Box>       
 
@@ -24,6 +25,7 @@ class Pagos  extends Component {
               getDataDTE ={this.props.getListDte}
               pagar = {this.props.pagar}
                 urlPago={this.props.urlPago}
+                dataPDF={this.props.dataPDF}
             />
             
           </Layout.Box>
