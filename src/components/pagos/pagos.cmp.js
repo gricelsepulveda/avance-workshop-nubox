@@ -22,6 +22,8 @@ class Pagos  extends Component {
 
             <GridPagos dataGrid= {this.props.dataDte}
               getDataDTE ={this.props.getListDte}
+              pagar = {this.props.pagar}
+                urlPago={this.props.urlPago}
             />
             
           </Layout.Box>

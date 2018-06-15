@@ -20,13 +20,18 @@ export const getListDte = () => {
 export const pagar = (documentos) => {
   return async (dispatch, getState) => {
     try {
+      
       //Obtiene todos los estados en redux
-    //   const state = getState()
-      // let response = await fetch('http://anemoi/WebApi/DocumentosElectronicos/ObtenerPorEmisorReceptorDocumento',documentos,{ method : 'post' })      
-      // let json = await response.json()
+      //   const state = getState()
+      let response = await fetch('http://aura/WebApi/PagoKhipu/RealizarPago',{ method : 'post',  headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },body:JSON.stringify( {  numeroDocumento:1,documentosElectronicos:documentos })})      
+      let json = await response.json()
+      console.log("caquin",json)
       dispatch({ type: PAGOS.ACTIONS.PAGANDO, urlPago: 'https://khipu.com/payment/info/qrsnqgwshnqx' })
       return    
-    } catch (error) {
+    } catch (error) { 
       console.error(error)
       return
     }

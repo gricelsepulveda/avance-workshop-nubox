@@ -11,7 +11,8 @@
     //  fileConfig: state.config.fileConfig,
     //  empleados: state.empleados,
     //  persons: state.empleados.persons,
-     dataDte: state.pagos.dtes,
+    urlPago:state.pagos.urlPago,
+     dataDte: state.pagos.dtes
    }
  }
 

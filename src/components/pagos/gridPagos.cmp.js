@@ -47,7 +47,6 @@ class GridPago extends React.PureComponent {
     }
 
     pagarDocumentos = () => {
-
       this.props.pagar(this.state.select)
     
     }
@@ -58,13 +57,14 @@ class GridPago extends React.PureComponent {
   
   
     render() {
-      console.log(this)
+      if (this.props.urlPago) {
+        this.showModalIframe(true)
+       
+      }
 
       let pdfView = {
         src: this.props.urlPago, 
       }
-
-      this.props.urlPago 
 
       
       return (
@@ -92,7 +92,7 @@ class GridPago extends React.PureComponent {
           <Modal.Create title='Pagar Factura' nbx-width-md nbx-height-md ref={this.modalIframe} >
             <Modal.Body>
               <div className="nbx-iframe-modal">
-                <iframe id="pdfViewerDesprendible" src={ `data:application/pdf;base64,${pdfView.src}`} height="380px" width="100%" />
+                <iframe id="pdfViewerDesprendible" src={ pdfView.src}  height="380px" width="100%" />
               </div>   
             </Modal.Body>   
             <Modal.ActionBar>
